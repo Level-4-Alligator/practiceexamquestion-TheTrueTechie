@@ -23,6 +23,13 @@ import java.util.ArrayList;
  ***********************/
 public final class PokerHand {
 	public static boolean IsStraight(ArrayList<Integer> cards) {
+		ArrayList<Integer>a = new ArrayList<Integer>(); 
+		for (int i = 0; i < cards.size(); i++) {
+			if () {
+				
+			}
+			
+		}
 		return false;
 	}
 }
