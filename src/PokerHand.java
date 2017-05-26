@@ -22,14 +22,44 @@ import java.util.ArrayList;
  *
  ***********************/
 public final class PokerHand {
+
 	public static boolean IsStraight(ArrayList<Integer> cards) {
-		ArrayList<Integer>a = new ArrayList<Integer>(); 
-		for (int i = 0; i < cards.size(); i++) {
-			if () {
-				
+		boolean swap = true;
+		int middleman = 0;
+		int middleman2 = 0;
+		boolean finalStage = true;
+		while (swap == true) {
+
+			swap = false;
+			for (int i = 0; i < cards.size() - 1; i++) {
+				if (cards.get(i) > cards.get(i + 1)) {
+					swap = true;
+					middleman = cards.get(i);
+					middleman2 = cards.get(i + 1);
+
+					cards.set(i, middleman2);
+					cards.set(i + 1, middleman);
+
+				}
 			}
-			
 		}
-		return false;
+		if (cards.size() == 5) {
+			int current = 0;
+			int expected = 0;
+
+			for (int i = 0; i < cards.size(); i++) {
+				current = i;
+				if (cards.get(i) == current) {
+					if (cards.get(i + 1) != current + 1) {
+						finalStage = false;
+					}
+				}
+			}
+		} else {
+			finalStage = false;
+		}
+
+		System.out.println(cards.toString());
+		return finalStage;
 	}
 }
